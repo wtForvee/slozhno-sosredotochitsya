@@ -4,12 +4,15 @@
 */
 
 :root {
-  --main-font-family: 'IBM Plex mono';
-  --background-color: #000028;
-  --menu-color: #FF0070;
-  --main-title-color: #DB00FF;
-  --text-color: #F1B2CE;
-  --title-decor: #FF0070;
   --accent-color: #FF0070;
-  --text-shadow: #FF0070;
+  --decor-color: #FF0070;
+  --menu-color: #FF0070;
+  --heading-color: #FF0070;
+  --background-color: #000028;
+  --list-item-title-color: #000028;
+  --header-paragraph-color: #000028;
+  --title-color: #DB00FF;
+  --text-color: #F1B2CE;
+  --font-family: 'IBM Plex Mono';
+  --background-image: url(/images/cover-image-dark.png)
 }

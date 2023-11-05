@@ -1,17 +1,21 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  display: grid;
   padding: 10px;
-  background: url(/images/cover-image.png) center/cover no-repeat fixed;
-  background: #000028;
+  background: var(--background-color) var(--background-image) top center no-repeat fixed;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 20px;
+  }
 }
 
 /* header */
 
 .header {
   display: grid;
-  grid-template-rows: repeat(4, auto);
   grid-template-columns: repeat(2, 1fr);
   position: relative;
 }
@@ -20,8 +24,8 @@
   content: '';
   width: 25.038px;
   height: 24.999px;
-  border-top: 1px solid #FF0070;
-  border-right: 1px solid #FF0070;
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
   grid-column: span 3;
   justify-self: end;
   position: absolute;
@@ -31,8 +35,8 @@
   content: '';
   width: 25.036px;
   height: 25.002px;
-  border-bottom: 1px solid #FF0070;
-  border-left: 1px solid #FF0070;
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
   grid-column: span 3;
   justify-self: start;
 }
@@ -44,13 +48,8 @@
 
 .rec-point::before {
   content: 'REC';
-  color: #FF0070;
-  text-align: center;
-  font-family: IBM Plex Mono;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 25px; /* 138.889% */
+  color: var(--decor-color);
+  line-height: 26px;
 }
 
 .rec-point::after {
@@ -59,66 +58,64 @@
   width: 10px;
   height: 10px;
   margin: 8px 9px 8px 10px;
-  box-shadow: 0 0 4px 2px #FF0070;
-  background-color: #FF0070;
+  box-shadow: 0 0 4px 2px var(--decor-color);
+  background-color: var(--decor-color);
   border-radius: 50%;
 }
 
 .header__theme-menu {
   grid-column: span 3;
   justify-self: end;
-  margin-block-start: 75px;
-  margin-block-end: 65px;
+  margin-block-start: 65px;
+  margin-block-end: 69px;
 }
 
+
 .header__theme-menu-list {
-  display: grid;
-  row-gap: 13px;
-  color: #FF0070;
-  text-align: center;
-  font-family: 'IBM Plex Mono';
-  font-size: 18px;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 18px; /* 100% */
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  color: var(--menu-color);
 }
 
 .header__theme-menu-button {
+  border: none;
+  padding: 0 13px;
+  outline: 1px solid transparent;
+  color: var(--menu-color);
   text-transform: lowercase;
+  background-color: transparent;
+  transition-property: outline;
+  cursor: pointer;
+  padding: 1.5px 13px;
 }
 
 .header__title {
   grid-column: span 3;
-  color: #DB00FF;
-  text-shadow: 4px 4px 0px #FF0070;
-  font-family: IBM Plex Mono;
+  color: var(--title-color);
+  text-shadow: 4px 4px 0px var(--accent-color);
   font-size: 116px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 82.5%; /* 95.7px */
-  margin-block-end: 55px;
+  line-height: 82.5%;
+  margin-block-end: 56px;
 }
 
 .header__description {
   grid-column: span 2;
-  color: #000028;
-  background-color: #FF0070;
-  font-family: IBM Plex Mono;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 23.4px; /* 130% */
+  color: var(--header-paragraph-color);
+  background-color: var(--accent-color);
+  font-weight: bold;
   margin-block-end: 31px;
 }
 
 @media (min-width: 768px) {
   .header__theme-menu {
-    margin-block-start: 147px;
-    margin-block-end: 173px;
+    margin-block-start: 173.5px;
+    margin-block-end: 176px;
   }
 
   .header__title {
-    margin-block-end: 162px;
+    margin-block-end: 161.5px;
+    margin-inline-start: -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
   
@@ -130,18 +127,20 @@
 
 @media (min-width: 1024px) {
   .header__theme-menu {
+    grid-row: -2/1;
     justify-self: center;
     margin-block-start: 0;
-    grid-row: -2/1;
+    margin-block-end: 274px;
+    margin-inline-end: 0;
   }
   
   .header__theme-menu-list {
-    grid-auto-flow: column;
-    column-gap: 36px;
+    flex-direction: row;
+    gap: 10px;
   }
 
   .header__title {
-    margin-block-end: 114px;
+    margin-block-end: 114.5px;
   }
 
   .header__description {
@@ -150,43 +149,79 @@
 }
 
 /* main */
-.section__title {
-  color: var(--title-decor);
-  font-size: inherit;
-}
 
 .content {
   display: grid;
+  row-gap: 50px;
   padding-block-start: 50px;
 }
 
 .section {
   display: grid;
-  gap: 20px;
+  row-gap: 20px;
 }
 
-.section__list {
+.section.images__section {
+  gap: 10px;
+  margin-block-end: 50px;
+}
+
+.section__list,
+.section__sublist{
   display: grid;
   gap: 20px;
 }
 
-.section__list-item {
+.section__title {
+  color: var(--heading-color);
+  line-height: 23.4px;
+}
+
+.section__list-item,
+.section__sublist-item {
   display: grid;
   row-gap: 10px;
+}
+
+.section.third__section .section__list .section__list-item {
+  row-gap: 20px;
+}
+
+.list-item-title,
+.sublist-item-title,
+.section__subtitle{
+  color: var(--list-item-title-color);
+  background-color: var(--accent-color);
+}
+
+.sublist-item-title {
+  font-weight: normal;
+}
+
+.list-item-text,
+.sublist-item-text {
+  color: var(--text-color);
+  line-height: 23.4px;
+}
+
+.text-link {
+  text-shadow: 2px 2px 0px var(--accent-color);
 }
 
 @media (min-width: 768px) {
   .page {
     padding: 20px;
   }
+
+  .content {
+    padding-block-start: 80px;
+    row-gap: 80px;
+  }
   
   .section {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  section.first__section .section__list,
-  section.third__section .section__list {
-    grid-column: span 2;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-flow: column;
+    column-gap: 20px;
   }
 
   section.second__section {
@@ -198,32 +233,40 @@
   }
 
   .section.images__section {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, auto);
+    grid-auto-flow: dense;
+    gap: 20px;
+    margin-block-end: 80px;
   }
 
   .section.images__section .section__title {
     grid-column: 1/-1;
   }
 
-  .section__image-1 {
+  .section__image:nth-of-type(1) {
     grid-column: span 2;
   }
 
-  .section__image-2 {
+  .section__image:nth-of-type(2) {
     grid-row: span 2;
   }
 
-  .section__image-3 {
+  .section__image:nth-of-type(3) {
     grid-row: span 2;
   }
 
-  .section__image-5 {
+  .section__image:nth-of-type(5) {
     grid-column: span 2;
   }
 }
   
 @media (min-width: 1024px) {
+  .section.first__section,
+  .section.third__section {
+    column-gap: 12px;
+  }
+
   section.second__section .section__list {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: column;
@@ -231,6 +274,11 @@
 
   section.second__section .section__list-item {
     grid-template-rows: auto 1fr;
+  }
+
+  .section.images__section {
+    gap: 20px;
+    margin-block-end: 80px;
   }
 }
 
@@ -240,18 +288,38 @@
   display: grid;
   justify-content: center;
   align-content: center;
-  padding-block-start: 286px;
-  padding-block-end: 285px;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
+  justify-self: end;
+  position: absolute;
+}
+
+.footer::after {
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
+  justify-self: start;
+  position: absolute;
+  bottom: 0px;
 }
 
 .footer__title {
-  color: #DB00FF;
-  text-shadow: 2px 2px 0px #FF0070;
-  font-family: IBM Plex Mono;
+  padding-block-start: 443px;
+  padding-block-end: 442px;
+  color: var(--title-color);
+  text-shadow: 2px 2px 0px var(--accent-color);
   font-size: 116px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 82.5%; /* 95.7px */
+  font-weight: bold;
+  line-height: 82.5%;
 }
 
 @media (min-width: 768px) {
@@ -259,3 +327,47 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
+
+@media (min-width: 1024px) {
+ .footer__title {
+    padding-block: 299px;
+ }
+}
+
+/* status */
+
+.header__theme-menu-button:hover {
+  outline: 1px solid currentColor;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid currentColor;
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid currentColor;
+  pointer-events: none;
+}
+
+.text-link {
+  text-decoration: none;
+}
+
+.text-link:hover {
+  border-bottom: 2px solid currentColor
+}
+
+.text-link:focus {
+  outline: 0;
+}
+
+.text-link:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: -1px;
+}
+
