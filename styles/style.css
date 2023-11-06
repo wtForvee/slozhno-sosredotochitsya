@@ -337,7 +337,7 @@ section.third__section .section__list-item {
     top: 20px;
   }
 
-  .footer::after{
+  .footer::after {
     bottom: 20px;
   }
 }
@@ -380,4 +380,3 @@ section.third__section .section__list-item {
   outline: 1px solid currentColor;
   outline-offset: -1px;
 }
-
