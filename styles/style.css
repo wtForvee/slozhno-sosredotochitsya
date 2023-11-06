@@ -3,7 +3,6 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   padding: 0 10px;
   background: var(--background-color) var(--background-image) top center no-repeat fixed;
-  background-size: cover;
 }
 
 @media (min-width: 768px) {
