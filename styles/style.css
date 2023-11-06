@@ -186,6 +186,11 @@
   line-height: 23.4px;
 }
 
+.section.gallery__section .section__title {
+  background-color: var(--accent-color);
+  color: var(--list-item-title-color);
+}
+
 .section__list,
 .section__sublist {
   display: grid;
