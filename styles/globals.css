@@ -4,22 +4,14 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  min-inline-size: 375px;
-  max-inline-size: 1024px;
   margin: 0 auto;
-  padding: 0;
-  font-family: var(--font-family, sans-serif);
+  min-inline-size: 375px;
+  max-inline-size: 1440px;
   font-size: 18px;
+  font-family: var(--font-family, sans-serif);
 }
 
 h1,
@@ -30,8 +22,8 @@ h5,
 h6,
 p {
   margin: 0;
-  line-height: 23.4px;
   font-size: 18px;
+  line-height: 23.4px;
 }
 
 ul {
@@ -48,11 +40,12 @@ picture {
 button,
 a {
   color: currentColor;
-  background: none;
-  border: none;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  color: currentColor;
+  background: none;
+  border: none;
   cursor: pointer;
   text-decoration: none;
 }
