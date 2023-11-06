@@ -79,14 +79,7 @@
 }
 
 .header__theme-menu-button {
-  border: none;
-  padding: 0 13px;
-  outline: 1px solid transparent;
-  color: var(--menu-color);
   text-transform: lowercase;
-  background-color: transparent;
-  transition-property: outline;
-  cursor: pointer;
   padding: 1.5px 13px;
 }
 
@@ -99,7 +92,7 @@
   margin-block-end: 56px;
 }
 
-.header__description {
+.header__paragraph {
   grid-column: span 2;
   color: var(--header-paragraph-color);
   background-color: var(--accent-color);
@@ -119,7 +112,7 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
   
-  .header__description {
+  .header__paragraph {
     grid-column: -1/2;
     margin-block-end: 138px;
   }
@@ -143,7 +136,7 @@
     margin-block-end: 114.5px;
   }
 
-  .header__description {
+  .header__paragraph {
     margin-block-end: 89px;
   }
 }
@@ -154,6 +147,7 @@
   display: grid;
   row-gap: 50px;
   padding-block-start: 50px;
+  margin-block-end: 50px;
 }
 
 .section {
@@ -161,9 +155,13 @@
   row-gap: 20px;
 }
 
-.section.images__section {
+.section.gallery__section {
   gap: 10px;
-  margin-block-end: 50px;
+}
+
+.section__title {
+  color: var(--heading-color);
+  line-height: 23.4px;
 }
 
 .section__list,
@@ -172,24 +170,18 @@
   gap: 20px;
 }
 
-.section__title {
-  color: var(--heading-color);
-  line-height: 23.4px;
-}
-
 .section__list-item,
 .section__sublist-item {
   display: grid;
   row-gap: 10px;
 }
 
-.section.third__section .section__list .section__list-item {
+.third__section.section__list.section__list-item {
   row-gap: 20px;
 }
 
 .list-item-title,
-.sublist-item-title,
-.section__subtitle{
+.sublist-item-title {
   color: var(--list-item-title-color);
   background-color: var(--accent-color);
 }
@@ -232,7 +224,7 @@
     grid-column: span 3;
   }
 
-  .section.images__section {
+  .section.gallery__section {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, auto);
     grid-auto-flow: dense;
@@ -240,7 +232,7 @@
     margin-block-end: 80px;
   }
 
-  .section.images__section .section__title {
+  .section.gallery__section .section__title {
     grid-column: 1/-1;
   }
 
