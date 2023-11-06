@@ -17,6 +17,7 @@ body {
   min-inline-size: 375px;
   max-inline-size: 1024px;
   margin: 0 auto;
+  padding: 0;
   font-family: var(--font-family, sans-serif);
   font-size: 18px;
 }
