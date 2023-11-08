@@ -35,7 +35,7 @@
 
 .rec-point::before {
   content: 'REC';
-  color: var(--decor-color);
+  color: var(--decor-point-color);
   text-transform: uppercase;
 }
 
@@ -45,8 +45,8 @@
   block-size: 10px;
   inline-size: 10px;
   margin: 8px 9px 8px 10px;
-  box-shadow: 0 0 4px 2px var(--decor-color);
-  background-color: var(--decor-color);
+  box-shadow: 0 0 4px 2px var(--decor-point-color);
+  background-color: var(--decor-point-color);
   border-radius: 50%;
 }
 
@@ -260,6 +260,10 @@
 
 @media (min-width: 1024px) {
   
+  .header__title, .footer__title {
+    --accent-color: #FF0070;
+  }
+  
   .header__theme-menu {
     align-self: start;
     justify-self: center;
@@ -274,12 +278,12 @@
     column-gap: 12px;
   }
 
-  section.section-what .section__list {
+  .section.section-what .section__list {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: column;
   }
 
-  section.section-what .section__list-item {
+  .section.section-what .section__list-item {
     grid-template-rows: auto 1fr;
   }
 }

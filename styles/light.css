@@ -10,7 +10,8 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --accent-color: #FF8DCB;
-  --decor-color: transparent;
+  --decor-color: #353430;
+  --decor-point-color: transparent;
   --menu-color: #353430;
   --heading-color: #353430;
   --background-color: #FFF1F7;
@@ -24,7 +25,8 @@
 @media (prefers-color-scheme: light) {
   :root {
     --accent-color: #FF8DCB;
-    --decor-color: transparent;
+    --decor-color: #353430;
+    --decor-point-color: transparent;
     --menu-color: #353430;
     --heading-color: #353430;
     --background-color: #FFF1F7;
