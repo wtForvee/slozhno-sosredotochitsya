@@ -133,7 +133,7 @@
   row-gap: 10px;
 }
 
-section.section-how .section__list-item {
+.section.section-how .section__list-item {
   row-gap: 20px;
 }
 
