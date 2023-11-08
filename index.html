@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light">
     <title>Сложно сосредоточиться</title>
-    <link rel="icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="icon" href="./images/favicon.ico" sizes="any">
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./images/mobile-icon.png">
     <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./styles/variables.css">
     <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/dark.css">
@@ -48,7 +50,7 @@
     </header>
 
     <main class="content">
-      <section class="section first__section">
+      <section class="section section-why">
         <h2 class="section__title">Почему сосредоточиться так сложно</h2>
         <ul class="section__list">
           <li class="section__list-item">
@@ -62,7 +64,7 @@
         </ul>
       </section>
 
-      <section class="section second__section">
+      <section class="section section-what">
         <h2 class="section__title">Что снижает концентрацию внимания?</h2>
         <ul class="section__list">
           <li class="section__list-item">
@@ -80,10 +82,10 @@
         </ul>
       </section>
 
-      <section class="section third__section">
+      <section class="section section-how">
         <h2 class="section__title">Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх секунд)</h2>
-        <ul class="section__list">
-          <li class="section__list-item">
+        <div class="section__list">
+          <div class="section__list-item">
             <h3 class="list-item-title">5 простых (на самом деле не очень) советов</h3>
             <ul class="section__sublist">
               <li class="section__sublist-item">
@@ -107,12 +109,12 @@
                 <p class="sublist-item-text">Настоящие бумажные книги. Это правда помогает с концентрацией: чтобы прочитать пост в соцсети, достаточно нескольких минут или даже секунд. А вот интересная книга способна затянуть и на несколько часов и круто тренирует направленное внимание.</p>
               </li>
             </ul>
-          </li> 
-        </ul> 
+          </div> 
+        </div> 
       </section>
       
-      <section class="section gallery__section"> 
-        <h3 class="section__title">А можно в картинках?</h3>
+      <section class="section section-gallery"> 
+        <h2 class="section__title">А можно в картинках?</h2>
         <img class="section__image" src="./images/sunset.png" alt="Изображение заката" loading="lazy">
         <img class="section__image"  src="./images/ice-cream.png" alt="Изображение мороженного" loading="lazy">
         <img class="section__image" src="./images/tape.png" alt="Изображение аудиокассеты" loading="lazy">
@@ -122,7 +124,7 @@
     </main>
 
     <footer class="footer decorated-zone">
-      <p class="footer__title">focus</p>
+      <h2 class="footer__title">focus</h2>
     </footer>
     <script src="./scripts/script.js"></script>
   </body>
