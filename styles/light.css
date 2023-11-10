@@ -14,6 +14,7 @@
   --decor-point-color: transparent;
   --menu-color: #353430;
   --heading-color: #353430;
+  --button-hover-color: rgba(50, 49, 45, 0.40);
   --background-color: #FFF1F7;
   --list-item-title-color: #353430;
   --header-paragraph-color: #353430;
@@ -29,6 +30,7 @@
     --decor-point-color: transparent;
     --menu-color: #353430;
     --heading-color: #353430;
+    --button-hover-color: rgba(50, 49, 45, 0.40);
     --background-color: #FFF1F7;
     --list-item-title-color: #353430;
     --header-paragraph-color: #353430;
